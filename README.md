@@ -1,4 +1,4 @@
-# ?? Antigravity Multi-Account Tracker
+ï»¿# ?? Antigravity Multi-Account Tracker
 
 A sleek, neon-themed desktop widget for tracking your Google Antigravity API quotas across multiple accounts in real-time.
 
@@ -10,14 +10,14 @@ A sleek, neon-themed desktop widget for tracking your Google Antigravity API quo
 
 ## ? Features
 
-- **Multi-Account Dashboard** — Track quotas for multiple Google accounts side by side
-- **Live Countdown Timers** — Real-time ticking countdown showing exactly when each model's quota resets (5-hour daily / weekly)
-- **Cascading Animated Refresh** — Click the global refresh and watch it sequentially animate through each account
-- **Per-Account Refresh** — Click any individual account's refresh button to update just that one
-- **Modern Neon UI** — Dark Onyx background, Deep Orange title bar, Neon Green progress bars
-- **Smart Tooltips** — Hover over any progress bar to see exact used/limit numbers and UTC reset time
-- **Thread-Safe Architecture** — Proper locking, subprocess timeouts, and input validation
-- **Zero Dependencies** — Uses only Python standard library (Tkinter) — no pip installs needed
+- **Multi-Account Dashboard** â€” Track quotas for multiple Google accounts side by side
+- **Live Countdown Timers** â€” Real-time ticking countdown showing exactly when each model's quota resets (5-hour daily / weekly)
+- **Cascading Animated Refresh** â€” Click the global refresh and watch it sequentially animate through each account
+- **Per-Account Refresh** â€” Click any individual account's refresh button to update just that one
+- **Modern Neon UI** â€” Dark Onyx background, Deep Orange title bar, Neon Green progress bars
+- **Smart Tooltips** â€” Hover over any progress bar to see exact used/limit numbers and UTC reset time
+- **Thread-Safe Architecture** â€” Proper locking, subprocess timeouts, and input validation
+- **Zero Dependencies** â€” Uses only Python standard library (Tkinter) â€” no pip installs needed
 
 ---
 
@@ -65,10 +65,10 @@ A sleek, neon-themed desktop widget for tracking your Google Antigravity API quo
 
 ## ??? Security
 
-- **No shell injection** — All subprocess calls use argument lists, never `shell=True` with interpolation
-- **Email validation** — Regex-validated before any CLI invocation
-- **Subprocess timeouts** — 20-second timeout prevents permanent app lockup
-- **No API keys stored** — Authentication is handled entirely by the Antigravity CLI
+- **No shell injection** â€” All subprocess calls use argument lists, never `shell=True` with interpolation
+- **Email validation** â€” Regex-validated before any CLI invocation
+- **Subprocess timeouts** â€” 20-second timeout prevents permanent app lockup
+- **No API keys stored** â€” Authentication is handled entirely by the Antigravity CLI
 
 ---
 
@@ -108,8 +108,14 @@ If this tool saves you time, consider buying me a coffee!
 
 ---
 
-## ?? License
+## âš ï¸ Known Limitations
 
-MIT License — see [LICENSE](LICENSE) for details.
+- **Unverified / Free Accounts:** Due to a known bug in the upstream `antigravity-usage` CLI, adding an account without a valid subscription or one that fails verification will still cache a "dummy" profile locally. The CLI will report this broken account as having 100% quotas available. Since the widget strictly renders the data provided by the CLI, these accounts will incorrectly show up as fully loaded.
+  - **Workaround:** If you add a bad account and hit a "Verification Required" wall in your browser, simply click the **âž– (Remove)** button on the widget and enter the email address to delete it from the cache.
+
+## ðŸ“œ License
+
+MIT License â€” see [LICENSE](LICENSE) for details.
 
 > **Disclaimer:** This is an unofficial community tool. Not affiliated with or endorsed by Google.
+
