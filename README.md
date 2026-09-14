@@ -1,16 +1,21 @@
 <div align="center">
-  <img src="quota_icon.ico" alt="Logo" width="80" height="80">
-  
-  # Antigravity Multi-Account Tracker
-  
-  **A sleek, neon-themed desktop widget for tracking your Google Antigravity API quotas across multiple accounts in real-time.**
-  
-  ![Python](https://img.shields.io/badge/Python-3.10+-blue?logo=python&logoColor=white)
-  ![Platform](https://img.shields.io/badge/Platform-Windows-blue?logo=windows&logoColor=white)
-  ![License](https://img.shields.io/badge/License-MIT-green)
-
+  <img src="quota_icon.ico" alt="Logo" width="128" height="128" style="border-radius: 16px;">
   <br />
+  
+  # antigravity-multi-account-tracker
+
+  <p align="center">
+    <img src="https://img.shields.io/badge/Python-3.10+-blue?logo=python&logoColor=white" alt="Python Version" />
+    <img src="https://img.shields.io/badge/Platform-Windows-blue?logo=windows&logoColor=white" alt="Platform Windows" />
+    <img src="https://img.shields.io/badge/Dependencies-Zero-success" alt="Zero Dependencies" />
+    <img src="https://img.shields.io/badge/License-MIT-0284c7" alt="License MIT" />
+  </p>
+
+  <p>A sleek, lightweight, neon-themed desktop widget for tracking your Google Antigravity API quotas across multiple accounts in real-time.</p>
+  <p><em>Inspired by the official Antigravity CLI</em></p>
 </div>
+
+<br />
 
 ## 📸 Preview
 
@@ -20,19 +25,19 @@
 
 ## ✨ Features
 
-🔥 **Multi-Account Dashboard**
+🔥 **Multi-Account Dashboard**  
 Track quotas for multiple Google accounts side by side natively on your Windows desktop. 
 
-⏱️ **Live Countdown Timers**
+⏱️ **Live Countdown Timers**  
 Real-time ticking countdown showing exactly when each model's quota resets (auto-adjusts between daily and weekly limits).
 
-🔄 **Animated Refresh**
+🔄 **Animated Refresh**  
 Click the global refresh and watch it sequentially animate through each account, or refresh accounts individually.
 
-🎨 **Modern Neon UI**
+🎨 **Modern Neon UI**  
 Beautiful, distraction-free aesthetic with a Dark Onyx background, Deep Orange title bar, and dynamic Neon Green progress bars.
 
-🛡️ **Thread-Safe & Secure**
+🛡️ **Thread-Safe & Secure**  
 - **Zero shell injection:** All subprocess calls use strict argument lists.
 - **Fail-safe timeouts:** 20-second timeout prevents permanent app lockups.
 - **Local auth only:** Your tokens never touch this app; authentication remains securely sandboxed inside the official Antigravity CLI.
@@ -98,7 +103,7 @@ Pull requests are welcome! Potential future features:
 
 If this tool saves you time, consider buying me a coffee!
 
-[![Ko-fi](https://img.shields.io/badge/Ko--fi-Support-ff5e5b?logo=ko-fi&logoColor=white)](https://ko-fi.com/)
+[![Ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/)
 
 ---
 
