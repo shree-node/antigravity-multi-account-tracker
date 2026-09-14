@@ -12,7 +12,7 @@
   </p>
 
   <p>A sleek, lightweight, neon-themed desktop widget for tracking your Google Antigravity API quotas across multiple accounts in real-time.</p>
-  <p><em>Inspired by <a href="https://www.npmjs.com/package/antigravity-usage">antigravity-usage</a></em></p>
+  <p><em>Inspired by <a href="https://github.com/skainguyen1412/antigravity-usage">antigravity-usage</a></em></p>
 </div>
 
 <br />
