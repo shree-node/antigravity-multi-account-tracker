@@ -403,17 +403,7 @@ class QuotaWidget(tk.Tk):
 
         for account in data_snapshot:
             email = account.get("email", "Unknown") if account.get("email") else "Unknown"
-            
-            # ── FAKE NAMES FOR SCREENSHOT ──
-            # Revert this back to normal after the screenshot!
-            if "shrishailkhanapure" in email:
-                email_short = "developer_pro"
-            elif "vampireclubpune" in email:
-                email_short = "test_account_2"
-            elif "shrishailkhanapure007" in email:
-                email_short = "project_alpha"
-            else:
-                email_short = "demo_user"
+            email_short = email.split("@")[0] if "@" in email else email
             
             # ── Account Header ──
             header = tk.Frame(self.content_frame, bg="#18181B", pady=4)
