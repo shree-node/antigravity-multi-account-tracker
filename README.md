@@ -1,106 +1,100 @@
-﻿# ?? Antigravity Multi-Account Tracker
+<div align="center">
+  <img src="quota_icon.ico" alt="Logo" width="80" height="80">
+  
+  # Antigravity Multi-Account Tracker
+  
+  **A sleek, neon-themed desktop widget for tracking your Google Antigravity API quotas across multiple accounts in real-time.**
+  
+  ![Python](https://img.shields.io/badge/Python-3.10+-blue?logo=python&logoColor=white)
+  ![Platform](https://img.shields.io/badge/Platform-Windows-blue?logo=windows&logoColor=white)
+  ![License](https://img.shields.io/badge/License-MIT-green)
 
-A sleek, neon-themed desktop widget for tracking your Google Antigravity API quotas across multiple accounts in real-time.
+  <br />
+</div>
 
-![Python](https://img.shields.io/badge/Python-3.10+-blue?logo=python&logoColor=white)
-![Platform](https://img.shields.io/badge/Platform-Windows-blue?logo=windows&logoColor=white)
-![License](https://img.shields.io/badge/License-MIT-green)
+## 📸 Preview
 
----
-
-## ? Features
-
-- **Multi-Account Dashboard** — Track quotas for multiple Google accounts side by side
-- **Live Countdown Timers** — Real-time ticking countdown showing exactly when each model's quota resets (5-hour daily / weekly)
-- **Cascading Animated Refresh** — Click the global refresh and watch it sequentially animate through each account
-- **Per-Account Refresh** — Click any individual account's refresh button to update just that one
-- **Modern Neon UI** — Dark Onyx background, Deep Orange title bar, Neon Green progress bars
-- **Smart Tooltips** — Hover over any progress bar to see exact used/limit numbers and UTC reset time
-- **Thread-Safe Architecture** — Proper locking, subprocess timeouts, and input validation
-- **Zero Dependencies** — Uses only Python standard library (Tkinter) — no pip installs needed
+![Antigravity Widget](preview.png)
 
 ---
 
-## ?? Prerequisites
+## ✨ Features
 
-- **Python 3.10+** with Tkinter (included by default on Windows)
-- **Antigravity CLI** installed and authenticated:
-  `ash
-  antigravity-usage accounts add
-  `
+🔥 **Multi-Account Dashboard**
+Track quotas for multiple Google accounts side by side natively on your Windows desktop. 
 
----
+⏱️ **Live Countdown Timers**
+Real-time ticking countdown showing exactly when each model's quota resets (auto-adjusts between daily and weekly limits).
 
-## ?? Quick Start
+🔄 **Animated Refresh**
+Click the global refresh and watch it sequentially animate through each account, or refresh accounts individually.
 
-1. **Clone the repo:**
-   `ash
-   git clone https://github.com/YOUR_USERNAME/antigravity-multi-account-tracker.git
-   cd antigravity-multi-account-tracker
-   `
+🎨 **Modern Neon UI**
+Beautiful, distraction-free aesthetic with a Dark Onyx background, Deep Orange title bar, and dynamic Neon Green progress bars.
 
-2. **Launch the widget:**
-   `ash
-   # Option A: Double-click launch.bat
-   # Option B: Run from terminal
-   python quota_widget.py
-   `
-
-3. **Add your accounts** using the ? button in the title bar
+🛡️ **Thread-Safe & Secure**
+- **Zero shell injection:** All subprocess calls use strict argument lists.
+- **Fail-safe timeouts:** 20-second timeout prevents permanent app lockups.
+- **Local auth only:** Your tokens never touch this app; authentication remains securely sandboxed inside the official Antigravity CLI.
 
 ---
 
-## ?? UI Overview
+## 🚀 Quick Start
 
-| Element | Color | Hex |
+### 1. Prerequisites
+You must have Python installed and the official Antigravity CLI configured on your system:
+```bash
+antigravity-usage accounts add
+```
+
+### 2. Download
+Clone this repository to your local machine:
+```bash
+git clone https://github.com/shree-node/antigravity-multi-account-tracker.git
+cd antigravity-multi-account-tracker
+```
+
+### 3. Launch
+No `pip install` required. It uses the Python standard library.
+```bash
+# Option A: Just double-click launch.bat!
+
+# Option B: Run from terminal
+python quota_widget.py
+```
+
+---
+
+## 🎨 UI Color Reference
+
+| Element | Color | Hex Code |
 |---|---|---|
 | Background | Midnight Onyx | `#09090B` |
 | Title Bar | Dark Orange | `#9A3412` |
 | Model Labels | Bright Orange | `#F97316` |
 | Progress Bars | Neon Green | `#4ADE80` |
-| Low Quota Warning | Red | `#EF4444` |
+| Quota Warning | Red | `#EF4444` |
 | Reset Timer | Amber Yellow | `#FCD34D` |
 
 ---
 
-## ??? Security
+## ⚠️ Known Limitations
 
-- **No shell injection** — All subprocess calls use argument lists, never `shell=True` with interpolation
-- **Email validation** — Regex-validated before any CLI invocation
-- **Subprocess timeouts** — 20-second timeout prevents permanent app lockup
-- **No API keys stored** — Authentication is handled entirely by the Antigravity CLI
+- **Unverified / Free Accounts:** Due to a known bug in the upstream `antigravity-usage` CLI, adding an account without a valid subscription or one that fails verification will still cache a "dummy" profile locally. The CLI will falsely report this broken account as having 100% quotas available. 
+  - **Workaround:** If you add a bad account and hit a "Verification Required" wall in your browser, simply click the **➖ (Remove)** button on the widget and type the email address to delete it from your cache.
 
 ---
 
-## ?? Project Structure
+## 🤝 Contributing
 
-`
-antigravity-multi-account-tracker/
-+-- quota_widget.py      # Main application
-+-- launch.bat           # One-click Windows launcher
-+-- quota_icon.ico       # Custom app icon
-+-- refresh_icon.png     # Green arrow refresh button
-+-- spinner_frame_*.png  # 8-frame loading animation
-+-- .gitignore
-+-- LICENSE              # MIT
-+-- README.md
-`
-
----
-
-## ?? Contributing
-
-Pull requests welcome! If you'd like to add features like:
+Pull requests are welcome! Potential future features:
 - Linux/macOS support
-- VS Code extension port
 - Auto-start on Windows login
-- Notification alerts when quota drops below threshold
-
-Feel free to open an issue or PR.
+- Notification alerts when quota drops below 10%
 
 ---
 
-## ? Support
+## ☕ Support
 
 If this tool saves you time, consider buying me a coffee!
 
@@ -108,14 +102,8 @@ If this tool saves you time, consider buying me a coffee!
 
 ---
 
-## ⚠️ Known Limitations
-
-- **Unverified / Free Accounts:** Due to a known bug in the upstream `antigravity-usage` CLI, adding an account without a valid subscription or one that fails verification will still cache a "dummy" profile locally. The CLI will report this broken account as having 100% quotas available. Since the widget strictly renders the data provided by the CLI, these accounts will incorrectly show up as fully loaded.
-  - **Workaround:** If you add a bad account and hit a "Verification Required" wall in your browser, simply click the **➖ (Remove)** button on the widget and enter the email address to delete it from the cache.
-
 ## 📜 License
 
 MIT License — see [LICENSE](LICENSE) for details.
 
 > **Disclaimer:** This is an unofficial community tool. Not affiliated with or endorsed by Google.
-
