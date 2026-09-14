@@ -1,4 +1,4 @@
-﻿<div align="center">
+<div align="center">
   <img src="quota_icon.ico" alt="Logo" width="128" height="128" style="border-radius: 16px;">
   <br />
   
@@ -17,34 +17,34 @@
 
 <br />
 
-## ðŸ“¸ Preview
+## 📸 Preview
 
 ![Antigravity Widget](preview.png)
 
 ---
 
-## âœ¨ Features
+## ✨ Features
 
-ðŸ”¥ **Multi-Account Dashboard**  
+🔥 **Multi-Account Dashboard**  
 Track quotas for multiple Google accounts side by side natively on your Windows desktop. 
 
-â±ï¸ **Live Countdown Timers**  
+⏱️ **Live Countdown Timers**  
 Real-time ticking countdown showing exactly when each model's quota resets (auto-adjusts between daily and weekly limits).
 
-ðŸ”„ **Animated Refresh**  
+🔄 **Animated Refresh**  
 Click the global refresh and watch it sequentially animate through each account, or refresh accounts individually.
 
-ðŸŽ¨ **Modern Neon UI**  
+🎨 **Modern Neon UI**  
 Beautiful, distraction-free aesthetic with a Dark Onyx background, Deep Orange title bar, and dynamic Neon Green progress bars.
 
-ðŸ›¡ï¸ **Thread-Safe & Secure**  
+🛡️ **Thread-Safe & Secure**  
 - **Zero shell injection:** All subprocess calls use strict argument lists.
 - **Fail-safe timeouts:** 20-second timeout prevents permanent app lockups.
 - **Local auth only:** Your tokens never touch this app; authentication remains securely sandboxed inside the official Antigravity CLI.
 
 ---
 
-## ðŸš€ Quick Start
+## 🚀 Quick Start
 
 ### 1. Prerequisites
 You must have Python installed and the official Antigravity CLI configured on your system:
@@ -70,7 +70,7 @@ python quota_widget.py
 
 ---
 
-## ðŸŽ¨ UI Color Reference
+## 🎨 UI Color Reference
 
 | Element | Color | Hex Code |
 |---|---|---|
@@ -83,14 +83,14 @@ python quota_widget.py
 
 ---
 
-## âš ï¸ Known Limitations
+## ⚠️ Known Limitations
 
 - **Unverified / Free Accounts:** Due to a known bug in the upstream `antigravity-usage` CLI, adding an account without a valid subscription or one that fails verification will still cache a "dummy" profile locally. The CLI will falsely report this broken account as having 100% quotas available. 
-  - **Workaround:** If you add a bad account and hit a "Verification Required" wall in your browser, simply click the **âž– (Remove)** button on the widget and type the email address to delete it from your cache.
+  - **Workaround:** If you add a bad account and hit a "Verification Required" wall in your browser, simply click the **➖ (Remove)** button on the widget and type the email address to delete it from your cache.
 
 ---
 
-## ðŸ¤ Contributing
+## 🤝 Contributing
 
 Pull requests are welcome! Potential future features:
 - Linux/macOS support
@@ -99,7 +99,7 @@ Pull requests are welcome! Potential future features:
 
 ---
 
-## â˜• Support
+## ☕ Support
 
 If this tool saves you time, consider buying me a coffee!
 
@@ -107,9 +107,8 @@ If this tool saves you time, consider buying me a coffee!
 
 ---
 
-## ðŸ“œ License
+## 📜 License
 
-MIT License â€” see [LICENSE](LICENSE) for details.
+MIT License — see [LICENSE](LICENSE) for details.
 
 > **Disclaimer:** This is an unofficial community tool. Not affiliated with or endorsed by Google.
-
