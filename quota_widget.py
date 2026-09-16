@@ -444,10 +444,8 @@ class QuotaWidget(tk.Tk):
                 # Classify into category
                 if "claude" in label_lower:
                     cat = "Claude"
-                elif "pro" in label_lower:
-                    cat = "Gemini Pro"
-                elif "flash" in label_lower or "gemini" in label_lower:
-                    cat = "Gemini Flash"
+                elif "gemini" in label_lower:
+                    cat = "Gemini"
                 else:
                     continue  # Skip unknown models
                 
@@ -468,7 +466,7 @@ class QuotaWidget(tk.Tk):
                     }
             
             # Render in fixed order with strict alignment
-            for cat in ["Claude", "Gemini Pro", "Gemini Flash"]:
+            for cat in ["Claude", "Gemini"]:
                 if cat not in categories: continue
                 info = categories[cat]
                 pct = info["pct"]
