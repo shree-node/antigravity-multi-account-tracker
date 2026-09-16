@@ -432,10 +432,7 @@ class QuotaWidget(tk.Tk):
             models = snapshot.get("models", [])
             if not models: continue
             
-            # Detect and skip unverified/dummy accounts (limit == 0 on all non-autocomplete models)
-            real_models = [m for m in models if not m.get("isAutocompleteOnly", False)]
-            if real_models and all(m.get("limit", 0) in (0, None) for m in real_models):
-                continue
+
             
             categories = {}  # { "Claude": {pct, reset_ms, model_id, used, limit, resetTime} }
             
