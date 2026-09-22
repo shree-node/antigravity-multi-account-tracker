@@ -49,7 +49,7 @@ class ModernProgressBar(tk.Canvas):
             self.create_oval(cx - dot_r, cy - dot_r, cx + dot_r, cy + dot_r, outline="", fill=dot_color)
 
 # \u2500\u2500\u2500 Unified CLI Helper (FIXED: no shell injection, has timeout) \u2500\u2500\u2500
-def run_cli(args, timeout=20):
+def run_cli(args, timeout=120):
     """Run antigravity-usage with safe argument list. Returns parsed JSON list or empty list."""
     # On Windows, .cmd wrappers need shell=True OR the full .cmd path
     cli_path = shutil.which("antigravity-usage")
@@ -141,7 +141,7 @@ class QuotaWidget(tk.Tk):
         
         icon_label = tk.Label(self.title_bar, text="\U0001f680", bg=title_bg, fg=title_fg, font=("Segoe UI Emoji", 15))
         icon_label.pack(side="left", padx=(5, 0), pady=4)
-        title_label = tk.Label(self.title_bar, text="Quotas", bg=title_bg, fg=title_fg, font=("Candara", 10, "bold"))
+        title_label = tk.Label(self.title_bar, text="Quotas", bg=title_bg, fg=title_fg, font=("Calibri", 10, "bold"))
         title_label.pack(side="left", padx=(2, 5), pady=8)
         
         btn_frame = tk.Frame(self.title_bar, bg=title_bg)
@@ -153,7 +153,7 @@ class QuotaWidget(tk.Tk):
             btn = tk.Button(parent, text=text, bg=title_bg, fg=title_fg,
                             activebackground=active_bg, activeforeground="white",
                             bd=0, relief="flat", highlightthickness=0,
-                            command=cmd, cursor="hand2", font=("Candara", 10))
+                            command=cmd, cursor="hand2", font=("Calibri", 10))
             btn.pack(side="left", padx=2)
             hover_bg = "#EF4444" if is_close else title_bg
             btn.bind("<Enter>", lambda e: btn.config(bg=hover_bg, fg="white"))
@@ -172,7 +172,7 @@ class QuotaWidget(tk.Tk):
             self.btn_ref = tk.Button(btn_frame, text="\u27f3", bg=title_bg, fg=title_fg,
                                      activebackground=title_bg, bd=0, relief="flat",
                                      highlightthickness=0, command=self.manual_refresh_all,
-                                     cursor="hand2", font=("Candara", 12, "bold"))
+                                     cursor="hand2", font=("Calibri", 12, "bold"))
         self.btn_ref.pack(side="left", padx=2)
         
         self.btn_close = create_text_btn(btn_frame, "\u2715", self.destroy, is_close=True)
@@ -197,9 +197,9 @@ class QuotaWidget(tk.Tk):
         
         # \u2500\u2500 Initial Status \u2500\u2500
         if not self._cli_available:
-            self.status_label = tk.Label(self.content_frame, text="\u274c antigravity-usage CLI not found in PATH.\nInstall it first.", bg="#09090B", fg="#EF4444", font=("Candara", 10, "bold"))
+            self.status_label = tk.Label(self.content_frame, text="\u274c antigravity-usage CLI not found in PATH.\nInstall it first.", bg="#09090B", fg="#EF4444", font=("Calibri", 10, "bold"))
         else:
-            self.status_label = tk.Label(self.content_frame, text="Fetching live quota data...", bg="#09090B", fg="#EA580C", font=("Candara", 10))
+            self.status_label = tk.Label(self.content_frame, text="Fetching live quota data...", bg="#09090B", fg="#EA580C", font=("Calibri", 10))
         self.status_label.pack(pady=40)
         
         if self._cli_available:
@@ -404,7 +404,7 @@ class QuotaWidget(tk.Tk):
         
         if not data_snapshot:
             tk.Label(self.content_frame, text="No accounts found.\nClick \u2795 to add one.",
-                     bg="#09090B", fg="#EA580C", font=("Candara", 10)).pack(pady=20)
+                     bg="#09090B", fg="#EA580C", font=("Calibri", 10)).pack(pady=20)
             return
 
         for account in data_snapshot:
@@ -415,7 +415,7 @@ class QuotaWidget(tk.Tk):
             header = tk.Frame(self.content_frame, bg="#18181B", pady=4)
             header.pack(fill="x", pady=(0, 3))
             tk.Label(header, text=f"\U0001f464 {email_short}", bg="#18181B", fg="#EA580C",
-                     font=("Candara", 10, "bold"), anchor="w").pack(side="left", padx=10)
+                     font=("Calibri", 10, "bold"), anchor="w").pack(side="left", padx=10)
             
             # Per-account refresh button (image-based)
             if self.img_refresh:
@@ -425,7 +425,7 @@ class QuotaWidget(tk.Tk):
             else:
                 btn_single = tk.Button(header, text="\u27f3", bg="#18181B", fg="#EA580C",
                                        activebackground="#18181B", bd=0, relief="flat",
-                                       highlightthickness=0, cursor="hand2", font=("Candara", 10))
+                                       highlightthickness=0, cursor="hand2", font=("Calibri", 10))
             btn_single.config(command=lambda e=email: self.manual_refresh_single(e))
             btn_single.pack(side="right", padx=10)
             
@@ -483,19 +483,19 @@ class QuotaWidget(tk.Tk):
                 
                 # 1. Category name (fixed 12 chars, packed left)
                 tk.Label(row, text=cat, bg="#09090B", fg="#F97316",
-                         font=("Candara", 10), width=12, anchor="w").pack(side="left")
+                         font=("Calibri", 10), width=12, anchor="w").pack(side="left")
                 
                 # 2. Percentage (fixed 5 chars, packed right)
                 pct_color = "#4ADE80" if pct > 20 else ("#FCD34D" if pct > 5 else "#EF4444")
                 if info["exhausted"]: pct_color = "#EF4444"
                 tk.Label(row, text=f"{pct}%", bg="#09090B", fg=pct_color,
-                         font=("Candara", 10, "bold"), width=5, anchor="e").pack(side="right")
+                         font=("Calibri", 10, "bold"), width=5, anchor="e").pack(side="right")
                 
                 # 3. Timer (fixed 10 chars, packed right)
                 timer_text = format_reset_time(reset_ms)
                 timer_color = "#FCD34D" if reset_ms > 0 else "#4ADE80"
                 timer_lbl = tk.Label(row, text=f"\u23f1{timer_text}", bg="#09090B", fg=timer_color,
-                                     font=("Candara", 9), width=10, anchor="w")
+                                     font=("Calibri", 9), width=10, anchor="w")
                 timer_lbl.pack(side="right", padx=(4, 0))
                 self._timer_label_map[(email, info["model_id"])] = timer_lbl
                 
@@ -512,7 +512,7 @@ class QuotaWidget(tk.Tk):
         for widget in self.content_frame.winfo_children():
             widget.destroy()
         tk.Label(self.content_frame, text=err, bg="#09090B", fg="#EF4444",
-                 font=("Candara", 10, "bold")).pack(pady=40)
+                 font=("Calibri", 10, "bold")).pack(pady=40)
 
 if __name__ == "__main__":
     app = QuotaWidget()
