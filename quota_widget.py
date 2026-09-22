@@ -280,7 +280,7 @@ class QuotaWidget(tk.Tk):
     # \u2500\u2500\u2500 REFRESH LOGIC (FIXED: thread-safe, no shell injection) \u2500\u2500\u2500
     def manual_refresh_all(self):
         if self.is_fetching: return
-        threading.Thread(target=self._fetch_bulk, daemon=True).start()
+        threading.Thread(target=self._fetch_cascade, daemon=True).start()
 
     def manual_refresh_single(self, email):
         if self.spinners.get(email, False) or self.is_fetching: return
@@ -336,6 +336,12 @@ class QuotaWidget(tk.Tk):
 
     def refresh_data_initial(self):
         threading.Thread(target=self._fetch_bulk, daemon=True).start()
+        self.after(300000, self._auto_refresh_loop)
+        
+    def _auto_refresh_loop(self):
+        if not self.is_fetching:
+            threading.Thread(target=self._fetch_cascade, daemon=True).start()
+        self.after(300000, self._auto_refresh_loop)
         
     def _fetch_bulk(self):
         self.is_fetching = True
